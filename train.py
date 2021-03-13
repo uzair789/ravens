@@ -72,6 +72,7 @@ def main(unused_argv):
     # Initialize agent.
     np.random.seed(train_run)
     tf.random.set_seed(train_run)
+
     agent = agents.names[FLAGS.agent](name, FLAGS.task, FLAGS.train_dir)
 
     # Limit random sampling during training to a fixed dataset.

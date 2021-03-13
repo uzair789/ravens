@@ -222,6 +222,8 @@ class TransporterAgent:
     transport_fname = 'transport-ckpt-%d.h5' % n_iter
     attention_fname = os.path.join(self.models_dir, attention_fname)
     transport_fname = os.path.join(self.models_dir, transport_fname)
+    print(attention_fname)
+    print(transport_fname)
     self.attention.load(attention_fname)
     self.transport.load(transport_fname)
     self.total_steps = n_iter

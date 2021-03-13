@@ -49,6 +49,7 @@ class Attention:
 
     self.model = tf.keras.models.Model(inputs=[d_in], outputs=[d_out])
     self.optim = tf.keras.optimizers.Adam(learning_rate=1e-4)
+    # self.optim = tf.keras.optimizers.SGD(learning_rate=1e-3, momentum=0.9, nesterov=True, name='SGD')
     self.metric = tf.keras.metrics.Mean(name='loss_attention')
 
   def forward(self, in_img, softmax=True):

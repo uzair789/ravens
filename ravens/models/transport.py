@@ -62,6 +62,7 @@ class Transport:
     in1, out1 = ResNet43_8s(kernel_shape, self.kernel_dim, prefix='s1_')
     self.model = tf.keras.Model(inputs=[in0, in1], outputs=[out0, out1])
     self.optim = tf.keras.optimizers.Adam(learning_rate=1e-4)
+    # self.optim = tf.keras.optimizers.SGD(learning_rate=1e-4, momentum=0.9, nesterov=True, name='SGD')
     self.metric = tf.keras.metrics.Mean(name='loss_transport')
 
     # if not self.six_dof:
